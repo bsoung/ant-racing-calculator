@@ -2,9 +2,9 @@
 
 ![Ant Race](https://imgur.com/Ti2J6YX.png "Ant Race Alt")
 
-We all know the coolest sport right now is competitive ant racing. Now enthusiasts can better their chances of winning those ant racing bets.
+We all know the coolest sport right now is competitive ant racing. Now you can get in on the action with some serious advantage! You'll find out which prize ant has the best chance of winning the race with this awesome little tool.
 
-This application grabs data from a GraphQL endpoint using the Relay library. For more information, visit their official sites:
+This application grabs data from a GraphQL endpoint using the Relay library. GraphQL is seriously cool stuff. For more information, visit their official sites:
 
 [GraphQL](https://www.graphql.com/)
 [Relay](https://facebook.github.io/relay/)
@@ -18,16 +18,18 @@ Frontend:
 ## To Develop / Running the App Locally
 
 * Fork and clone the repository.
-* Go to the root directory of the folder and run the follow command in the terminal:
+* Go to the root directory of the cloned folder and run the follow command in the terminal:
 ```
 npm i 
 ```
-* 
+* After successful installation, stay in the root directory of the app, and run the following command:
 
 ```
 npm run dev
 ```
 * Visit localhost:3000 
+
+* Enjoy!
 
 * This app was made with an ejected React-Create-App generator. If you run into any strange problems, be sure to post an issue on ther [Repo Page](https://github.com/facebookincubator/create-react-app)
 
