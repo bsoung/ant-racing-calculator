@@ -1,5 +1,12 @@
 import React from "react";
 
-export default props => {
-  return <div>Ant component</div>;
+export default ({ name, length, weight, color }) => {
+  return (
+    <div>
+      name: {name}
+      weight: {weight}
+      length: {length}
+      color: {color}
+    </div>
+  );
 };
