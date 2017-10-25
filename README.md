@@ -29,7 +29,7 @@ npm i
 * After successful installation, stay in the root directory of the app, and run the following command:
 
 ```
-npm run dev
+npm run start
 ```
 * Visit localhost:3000 
 
