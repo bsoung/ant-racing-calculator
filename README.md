@@ -2,7 +2,7 @@
 
 ![Ant Race](https://imgur.com/iUv7Po5.png "Ant Race Alt")
 
-We all know the coolest sport right now is competitive ant racing. Now you can get in on the action with some serious advantage! You'll find out which prize ant has the best chance of winning the race with this awesome little tool.
+We all know the coolest sport right now is competitive ant racing. Now you can get in on the action with some serious advantage! You'll find out which prize ant has the best chance of winning the race with this awesome little tool!
 
 This application grabs data from a GraphQL endpoint using the Relay library. GraphQL is seriously cool stuff. For more information, visit the official sites:
 
