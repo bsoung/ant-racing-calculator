@@ -94,8 +94,23 @@ class AntList extends Component {
       <div>
         <h1>The Ant Racing Calculator</h1>
         <p>Gain an edge over your opponents :)</p>
-        <button>calculate</button>
+        <img src={this.renderLoadingInfo().loadImage} alt="antz rule" />
         {_.map(this.props.ants, ant => <Ant {...this.props} />)}
+        <button
+          onClick={this.onClickCalculateOdds}
+          disabled={this.state.isCalculating}
+        >
+          {this.renderLoadingInfo().buttonMessage}
+        </button>
+        <button
+          onClick={this.onClickResetOdds}
+          disabled={
+            !this.stateisCalculating ||
+            this.state.antUpdateTicker !== this.state.ants.length
+          }
+        >
+          Reset
+        </button>
       </div>
     );
   }
