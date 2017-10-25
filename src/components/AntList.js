@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { graphql, createFragmentContainer } from "react-relay";
 import Ant from "./Ant";
+import { graphql, createFragmentContainer } from "react-relay";
 import _ from "lodash";
 
 import generateAntWinLikelihoodCalculator from "../utils/calculateWinningOdds";
@@ -18,6 +18,7 @@ class AntList extends Component {
     });
   }
 
+  // either begin or reset the ant calculations
   setLoadingState = loadState => {
     const { ants } = this.state;
 
@@ -40,10 +41,16 @@ class AntList extends Component {
     });
   };
 
+  /**
+   * Ant calculation logic
+   */
+
+  // insert updated item back in the array copy
   arrUpdateItemByIndex = (arr, index, item) => {
     return [...arr.slice(0, index), item, ...arr.slice(index + 1)];
   };
 
+  // calculate success odds of ant using provided algorithm
   calculateAnt = ant => {
     generateAntWinLikelihoodCalculator()(result => {
       const newAnt = { ...ant, odds: Math.floor(result * 100) };
@@ -51,22 +58,35 @@ class AntList extends Component {
     });
   };
 
+  // grab the correct updated ant by name, stick it in array copy, then sort and update
   updateAnt = ant => {
-    const antIndex = this.state.ants.findIndex(a => a.name === ant.name);
-    const newAnts = this.arrUpdateItemByIndex(this.state.ants, antIndex, ant);
+    let { ants, antUpdateTicker } = this.state;
+    let incrementedTicker = ++antUpdateTicker;
+    const antIndex = ants.findIndex(_ant => _ant.name === ant.name);
+    const newAnts = this.arrUpdateItemByIndex(ants, antIndex, ant);
 
     this.setState({
-      ants: newAnts.sort((a, b) => a.odds < b.odds)
+      ants: newAnts.sort((a, b) => a.odds < b.odds),
+      antUpdateTicker: incrementedTicker
     });
   };
 
+  /**
+   * Even handlers
+   */
+
   onClickCalculateOdds = () => {
-    _.each(this.state.ants, this.calculateAnt);
+    this.setLoadingState(true);
+    _.each(this.props.ants, this.calculateAnt);
   };
 
   onClickResetOdds = () => {
     this.setLoadingState(false);
   };
+
+  /**
+   * Render methods
+   */
 
   renderLoadingInfo = () => {
     const { isCalculating, antUpdateTicker, ants } = this.state;
@@ -104,6 +124,7 @@ class AntList extends Component {
 
   render() {
     const { isCalculating, antUpdateTicker, ants } = this.state;
+
     return (
       <div className="ant-list-component">
         <div className="ant-paper-container">

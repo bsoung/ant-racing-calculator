@@ -1,5 +1,6 @@
 import React from "react";
 
+// math.random for displaying random width highlights
 export default ({
 	odds,
 	status,
@@ -14,10 +15,19 @@ export default ({
 }) => {
 	const lowercaseColor = color.toLowerCase();
 
+	const renderRanks = antUpdateTicker === ants.length && (
+		<div className="lg-odds-status">
+			<p>{rank}</p>
+		</div>
+	);
+
 	return (
-		<div>
+		<div id="handwritten" style={{ transform: `rotate(${randRotate}deg)` }}>
+			{renderRanks}
+			<i className="pin" />
 			<em>{name}</em>
 			<p
+				className="color-status"
 				style={{
 					backgroundColor: `${lowercaseColor}`,
 					color: "#fff",
@@ -26,13 +36,22 @@ export default ({
 			>
 				color - {color}
 			</p>
-			<p style={{ width: `${Math.floor(Math.random() * 30) + 70}%` }}>
+			<p
+				className="length-status"
+				style={{ width: `${Math.floor(Math.random() * 30) + 70}%` }}
+			>
 				length - {length}mm
 			</p>
-			<p style={{ width: `${Math.floor(Math.random() * 30) + 70}%` }}>
+			<p
+				className="weight-status"
+				style={{ width: `${Math.floor(Math.random() * 30) + 70}%` }}
+			>
 				weight - {weight}mg
 			</p>
-			<p style={{ width: `${Math.floor(Math.random() * 30) + 70}%` }}>
+			<p
+				className="odds-status"
+				style={{ width: `${Math.floor(Math.random() * 30) + 70}%` }}
+			>
 				Odds - {odds || status || "Not calculated"}
 				{odds && "%"}
 			</p>
