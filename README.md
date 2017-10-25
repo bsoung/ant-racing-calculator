@@ -50,7 +50,7 @@ get-graphql-schema GRAPHQL_API_ENDPOINT > ./schema.graphql
 relay-compiler --src ./src --schema ./schema.graphql
 ```
 
-* After that, try running 'npm run start' again in the root directory, and that should solve any schema problems. Have fun!
+* After that, try running 'npm run start' again, and that should solve any schema problems. Have fun!
 
 
 
