@@ -194,7 +194,7 @@ button:focus {
 	width: 0.1em;
 }
 .pin:after {
-	background-color: skyBlue;
+	background-color: #fff;
 	background-image: radial-gradient(
 		25% 25%,
 		circle,
