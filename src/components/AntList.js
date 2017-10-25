@@ -89,28 +89,44 @@ class AntList extends Component {
     return loadingObj;
   };
 
+  renderAntList = ants => {
+    return _.map(ants, (ant, index) => (
+      <Ant
+        key={ant.name}
+        rank={index + 1}
+        randRotate={Math.floor(Math.random() * 20) - 10}
+        antUpdateTicker={this.state.antUpdateTicker}
+        ants={this.state.ants}
+        {...ant}
+      />
+    ));
+  };
+
   render() {
+    const { isCalculating, antUpdateTicker, ants } = this.state;
     return (
-      <div>
-        <h1>The Ant Racing Calculator</h1>
-        <p>Gain an edge over your opponents :)</p>
-        <img src={this.renderLoadingInfo().loadImage} alt="antz rule" />
-        {_.map(this.props.ants, ant => <Ant {...this.props} />)}
-        <button
-          onClick={this.onClickCalculateOdds}
-          disabled={this.state.isCalculating}
-        >
-          {this.renderLoadingInfo().buttonMessage}
-        </button>
-        <button
-          onClick={this.onClickResetOdds}
-          disabled={
-            !this.stateisCalculating ||
-            this.state.antUpdateTicker !== this.state.ants.length
-          }
-        >
-          Reset
-        </button>
+      <div className="ant-list-component">
+        <div className="ant-paper-container">
+          <img src={this.renderLoadingInfo().loadImage} alt="antz rule" />
+          <div className="ant-paper">
+            <h1>The Ant Racing Calculator</h1>
+            <p>Gain an edge over your opponents :)</p>
+            <br />
+            <button
+              onClick={this.onClickCalculateOdds}
+              disabled={isCalculating}
+            >
+              {this.renderLoadingInfo().buttonMessage}
+            </button>
+            <button
+              onClick={this.onClickResetOdds}
+              disabled={!isCalculating || antUpdateTicker !== ants.length}
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+        <div className="ants-paper-container">{this.renderAntList(ants)}</div>
       </div>
     );
   }

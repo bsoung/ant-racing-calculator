@@ -1,5 +1,82 @@
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+
+* {
+	box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+	background: url(https://imgur.com/nWof7hJ.png) center / cover;
+	width: 100%;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	z-index: -1;
+}
+
+button {
+	cursor: pointer;
+}
+
+button:focus {
+	outline: none;
+}
+
+.ant-list-component {
+	min-width: 1230px;
+}
+
+.ant-list-component .ants-paper-container {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.ant-paper-container {
+	width: 40%;
+	margin: 0 auto;
+}
+.ant-paper-container img {
+	width: 40%;
+	float: right;
+	margin-top: -5%;
+	margin-right: -15%;
+	transform: rotate(15deg);
+	box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+.ant-paper {
+	margin-top: 66px;
+	margin-bottom: 50px;
+	background: #f4f0e1;
+	height: auto;
+	padding: 40px;
+	font-size: 120%;
+	font-family: Indie Flower;
+	line-height: 1.5em;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3) 1px, transparent 1px);
+	background-size: 100% 1.5em;
+	background-origin: content-box;
+	background-position: 0 1em;
+	border-radius: 15px;
+	box-shadow: -5px 5px 8px rgba(0, 0, 0, 0.3);
+}
+.ant-paper ul {
+	margin: 0;
+	padding-top: 0;
+}
+.ant-paper p {
+	margin: 0;
+	padding-top: 0;
+}
+.ant-paper h1 {
+	font-size: 1.3em;
+	padding: 0;
+	margin: 0;
+	font-size: bold;
+	line-height: 25px;
+}
+
+.ant-paper button {
+	margin-top: 20px;
+	margin-right: 25px;
+	border: none;
 }
