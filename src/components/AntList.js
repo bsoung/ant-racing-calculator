@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { graphql, createFragmentContainer } from "react-relay";
 import Ant from "./Ant";
 
 class AntList extends Component {
@@ -12,4 +13,14 @@ class AntList extends Component {
   }
 }
 
-export default AntList;
+export default createFragmentContainer(
+  AntList,
+  graphql`
+    fragment AntList_ants on Ant @relay(plural: true) {
+      name
+      color
+      length
+      weight
+    }
+  `
+);
