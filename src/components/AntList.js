@@ -7,7 +7,37 @@ import generateAntWinLikelihoodCalculator from "../utils/calculateWinningOdds";
 
 class AntList extends Component {
   state = {
-    ants: []
+    ants: [],
+    isCalculating: false,
+    antUpdateTicker: 0
+  };
+
+  componentDidMount() {
+    this.setState({
+      ants: this.props.ants
+    });
+  }
+
+  setLoadingState = loadState => {
+    const { ants } = this.state;
+
+    if (loadState) {
+      return this.setState({
+        ants: _.map(ants, ant => ({ ...ant, status: "Loading..." })),
+        isCalculating: true
+      });
+    }
+
+    this.setState({
+      ants: _.map(ants, ant => ({
+        ...ant,
+        status: null,
+        odds: null
+      })),
+      isCalculating: false,
+      antUpdateTicker: 0,
+      ranking: []
+    });
   };
 
   arrUpdateItemByIndex = (arr, index, item) => {
@@ -34,9 +64,36 @@ class AntList extends Component {
     _.each(this.state.ants, this.calculateAnt);
   };
 
+  onClickResetOdds = () => {
+    this.setLoadingState(false);
+  };
+
+  renderLoadingInfo = () => {
+    const { isCalculating, antUpdateTicker, ants } = this.state;
+    const loadingObj = {};
+
+    if (isCalculating && antUpdateTicker === ants.length) {
+      loadingObj.buttonMessage = "Finished!";
+      loadingObj.loadImage =
+        "http://www.imagefully.com/wp-content/uploads/2015/07/Beautiful-Cute-Ant-Image-Share-On-Facebook.jpg";
+    } else if (isCalculating) {
+      loadingObj.buttonMessage = "Calculating...";
+      loadingObj.loadImage =
+        "https://media.tenor.com/images/927de715ef7e355e92647e514fd50690/tenor.gif";
+    } else {
+      loadingObj.buttonMessage = "Calculate Odds";
+      loadingObj.loadImage =
+        "http://medimoon.com/wp-content/uploads/2014/02/zt-ants-ifc_01.jpg";
+    }
+
+    return loadingObj;
+  };
+
   render() {
     return (
       <div>
+        <h1>The Ant Racing Calculator</h1>
+        <p>Gain an edge over your opponents :)</p>
         <button>calculate</button>
         {_.map(this.props.ants, ant => <Ant {...this.props} />)}
       </div>
