@@ -35,7 +35,7 @@ npm run dev
 
 * Enjoy!
 
-* This app was made with an ejected React-Create-App generator. If you run into any strange problems, be sure to post an issue on ther [Repo Page](https://github.com/facebookincubator/create-react-app)
+* This app was made with an ejected React-Create-App generator. If you run into any strange problems, be sure to post an issue on ther [Repo Page](https://github.com/facebookincubator/create-react-app).
 
 * If you run into any problems with GraphQL or Relay configurations, you may need to run these commands to grab a fresh scheme from the Ant API and generate some new .graphql files. Replace '__GRAPHQL_API_ENDPOINT__' with the appropriate Ant API endpoint.
 
