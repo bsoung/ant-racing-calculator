@@ -6,8 +6,8 @@ We all know the coolest sport right now is competitive ant racing. Now you can g
 
 This application grabs data from a GraphQL endpoint using the Relay library. GraphQL is seriously cool stuff. For more information, visit the official sites:
 
-[GraphQL](https://www.graphql.com/)
-[Relay](https://facebook.github.io/relay/)
+* [GraphQL](https://www.graphql.com/)
+* [Relay](https://facebook.github.io/relay/)
 
 ## Technologies
 
