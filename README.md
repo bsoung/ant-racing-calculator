@@ -4,7 +4,7 @@
 
 We all know the coolest sport right now is competitive ant racing. Now you can get in on the action with some serious advantage! You'll find out which prize ant has the best chance of winning the race with this awesome little tool.
 
-This application grabs data from a GraphQL endpoint using the Relay library. GraphQL is seriously cool stuff. For more information, visit their official sites:
+This application grabs data from a GraphQL endpoint using the Relay library. GraphQL is seriously cool stuff. For more information, visit the official sites:
 
 [GraphQL](https://www.graphql.com/)
 [Relay](https://facebook.github.io/relay/)
@@ -14,6 +14,10 @@ This application grabs data from a GraphQL endpoint using the Relay library. Gra
 Frontend:
 * React
 * Relay
+
+Tools:
+* Webpack
+* Babel
 
 ## To Develop / Running the App Locally
 
