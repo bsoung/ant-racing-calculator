@@ -42,7 +42,7 @@ npm run dev
 ```
 npm install -g get-graphql-schema 
 
-get-graphql-schema __GRAPHQL_API_ENDPOINT__ > ./schema.graphql 
+get-graphql-schema GRAPHQL_API_ENDPOINT > ./schema.graphql 
 ```
 * Then run the compiler. Make sure you are in the root directory.
 
@@ -50,7 +50,7 @@ get-graphql-schema __GRAPHQL_API_ENDPOINT__ > ./schema.graphql
 relay-compiler --src ./src --schema ./schema.graphql
 ```
 
-
+* After that, try running 'npm run start' again in the root directory, and that should solve any schema problems. Have fun!
 
 
 
