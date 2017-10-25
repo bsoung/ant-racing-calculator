@@ -4,6 +4,14 @@ import Ant from "./Ant";
 import _ from "lodash";
 
 class AntList extends Component {
+  state = {
+    ants: []
+  };
+
+  arrUpdateItemByIndex = (arr, index, item) => {
+    return [...arr.slice(0, index), item, ...arr.slice(index + 1)];
+  };
+
   render() {
     return <div>{_.map(this.props.ants, ant => <Ant {...this.props} />)}</div>;
   }
