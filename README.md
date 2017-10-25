@@ -1,6 +1,6 @@
 # Ant Race Calculator - win more ant races!
 
-![Ant Race](https://imgur.com/Ti2J6YX.png "Ant Race Alt")
+![Ant Race](https://imgur.com/iUv7Po5.png "Ant Race Alt")
 
 We all know the coolest sport right now is competitive ant racing. Now you can get in on the action with some serious advantage! You'll find out which prize ant has the best chance of winning the race with this awesome little tool.
 
